@@ -1,4 +1,4 @@
-package com.star.email.api.entity;
+package com.star.imgapi.entity;
 
 import lombok.Data;
 

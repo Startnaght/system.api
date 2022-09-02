@@ -1,9 +1,9 @@
-package com.star.email.api.serever.impl;
+package com.star.imgapi.serever.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.star.email.api.entity.complete;
-import com.star.email.api.mapper.CompleteMapper;
-import com.star.email.api.serever.Mailservere;
+import com.star.imgapi.entity.complete;
+import com.star.imgapi.mapper.CompleteMapper;
+import com.star.imgapi.serever.Mailservere;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

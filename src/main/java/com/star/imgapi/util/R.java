@@ -1,11 +1,9 @@
-package com.star.email.api.util;
+package com.star.imgapi.util;
 
-import com.star.email.api.entity.complete;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

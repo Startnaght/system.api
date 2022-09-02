@@ -1,4 +1,4 @@
-package com.star.email.api.util;
+package com.star.imgapi.util;
 
 /**
  * @Author: oyster

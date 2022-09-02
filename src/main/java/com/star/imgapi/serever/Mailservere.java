@@ -1,7 +1,7 @@
-package com.star.email.api.serever;
+package com.star.imgapi.serever;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.star.email.api.entity.complete;
+import com.star.imgapi.entity.complete;
 
 import java.util.List;
 

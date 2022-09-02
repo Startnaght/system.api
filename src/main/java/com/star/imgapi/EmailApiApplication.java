@@ -1,10 +1,10 @@
-package com.star.email.api;
+package com.star.imgapi;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("com.star.email.api.mapper") //扫描整个文件夹
+@MapperScan("com.star.imgapi.mapper") //扫描整个文件夹
 @SpringBootApplication()
 public class EmailApiApplication {
 

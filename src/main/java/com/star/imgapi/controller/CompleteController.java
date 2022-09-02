@@ -1,8 +1,8 @@
-package com.star.email.api.controller;
+package com.star.imgapi.controller;
 
-import com.star.email.api.entity.complete;
-import com.star.email.api.serever.Mailservere;
-import com.star.email.api.util.R;
+import com.star.imgapi.entity.complete;
+import com.star.imgapi.serever.Mailservere;
+import com.star.imgapi.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

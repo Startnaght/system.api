@@ -1,7 +1,7 @@
-package com.star.email.api.mapper;
+package com.star.imgapi.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.star.email.api.entity.complete;
+import com.star.imgapi.entity.complete;
 
 /**
  * @Author: oyster

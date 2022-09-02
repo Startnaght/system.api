@@ -1,4 +1,4 @@
-package com.star.email.api;
+package com.star.imgapi.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
