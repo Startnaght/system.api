@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/*.iml": true,
+        "**/resupportSource": true
+    }
+}

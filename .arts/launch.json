@@ -1,0 +1,53 @@
+{
+    "version": "2.0",
+    "configurations": [
+        {
+            "killPrevSession": false,
+            "withProfiling": true,
+            "temporary": true,
+            "request": "launch",
+            "mainClass": {
+                "name": "com.star.imgapi.EmailApiApplication",
+                "sourcePath": "f:system\\main\\java\\com\\star\\imgapi\\EmailApiApplication.java",
+                "args": [],
+                "console": "integrated"
+            },
+            "name": "f:/changan/system/:EmailApiApplication",
+            "projectRootPath": "${workspaceRoot}",
+            "showAdvancedSettings": true,
+            "type": "javadbg",
+            "skipBuild": false
+        },
+        {
+            "name": "Maven Test: All",
+            "request": "launch",
+            "type": "javadbg",
+            "skipBuild": false,
+            "maven": {
+                "goals": [
+                    "test"
+                ],
+                "options": [
+                    "-am",
+                    "-fae",
+                    "-Dtest=*"
+                ]
+            },
+            "temporary": true
+        },
+        {
+            "request": "launch",
+            "type": "javadbg",
+            "name": "EmailApiApplication",
+            "withProfiling": true,
+            "skipBuild": false,
+            "mainClass": {
+                "name": "com.star.imgapi.EmailApiApplication",
+                "sourcePath": "f:\\changan\\system\\src\\main\\java\\com\\star\\imgapi\\EmailApiApplication.java",
+                "console": "integrated"
+            },
+            "temporary": true
+        }
+    ],
+    "compounds": []
+}
