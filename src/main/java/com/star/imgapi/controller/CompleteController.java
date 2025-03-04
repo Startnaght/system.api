@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mysql.cj.log.Log;
 import com.star.imgapi.entity.Uploadteam;
 import com.star.imgapi.entity.complete;
 import com.star.imgapi.serever.Mailservere;
 import com.star.imgapi.serever.impl.uploadserverimpl;
 import com.star.imgapi.util.R;
+import com.star.imgapi.util.GobalLog;
 
 /**
  * @Author: oyster
@@ -45,6 +47,7 @@ public class CompleteController {
 
     @PostMapping("/upload") //post请求
     public R upload(@RequestBody Uploadteam uploadteam) {  //接收前端传来的数据
+        GobalLog.info("数据已经成功上传~来自长安",uploadteam.getIpHome());
         uploadserverimpl uploadserverimpl = new uploadserverimpl(); //实例化
         uploadserverimpl.Saveimg(uploadteam); //调用保存图片的方法
 

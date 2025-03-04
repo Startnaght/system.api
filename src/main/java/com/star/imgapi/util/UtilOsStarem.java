@@ -29,6 +29,7 @@ public class UtilOsStarem {
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    GobalLog.debug(e.getMessage()); //打印错误
                 }
             }
         }

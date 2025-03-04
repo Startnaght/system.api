@@ -18,4 +18,6 @@ public class Uploadteam {
     private String size;    // 上传大小
  
     private String time;    // 上传时间
+
+    private Integer ipHome;   // 上传ip
 }
