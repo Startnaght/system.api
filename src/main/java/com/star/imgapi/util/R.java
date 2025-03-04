@@ -3,6 +3,7 @@ package com.star.imgapi.util;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,7 @@ public class R extends HashMap<String, Object> {
     private R() {
     }
 
+
     // 成功静态方法
     public static R ok() {
         R r = new R();
@@ -45,6 +47,17 @@ public class R extends HashMap<String, Object> {
         r.setCode(ResultCode.ERROR);
         r.setMessage("失败");
         return r;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public R success(Boolean success) {

@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @Author: oyster
- * @Description: TODO
+ * @Description:  这是实现 MybatisPlus 的s数据库操作 的一个字段表
  * @DateTime: 2022/6/6 18:16
  **/
 @Data
