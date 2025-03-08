@@ -24,7 +24,7 @@ public class GobalLog {
         }
     }
 
-    public static void info(String message,Integer ipHome) {
+    public static void info(String message,String ipHome) {
         message=message+"ip地址为："+ipHome;  //添加ip地址
         logger.log(Level.INFO, message);
     }

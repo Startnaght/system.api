@@ -14,5 +14,5 @@ public interface ResultCode {
     
     public static  String  error = "error"; //存储错误
     
-    public static  String   path  = "/dateMedio"; //返回路径
+    public static  String   path  = "F:/changan/pc"; //返回路径dateMedio
 }

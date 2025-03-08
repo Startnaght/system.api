@@ -2,19 +2,21 @@ package com.star.imgapi.controller;
 
 import java.util.List;
 
+import com.star.imgapi.serever.impl.uploadserverimpl;
+import com.star.imgapi.util.GobalLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mysql.cj.log.Log;
-import com.star.imgapi.entity.Uploadteam;
 import com.star.imgapi.entity.complete;
 import com.star.imgapi.serever.Mailservere;
-import com.star.imgapi.serever.impl.uploadserverimpl;
 import com.star.imgapi.util.R;
-import com.star.imgapi.util.GobalLog;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import com.star.imgapi.entity.Uploadteam;
+import com.star.imgapi.util.IpUtil;
 
 /**
  * @Author: oyster
@@ -45,13 +47,24 @@ public class CompleteController {
         return R.ok().put("明天", "依旧");
     }
 
-    @PostMapping("/upload") //post请求
-    public R upload(@RequestBody Uploadteam uploadteam) {  //接收前端传来的数据
-        GobalLog.info("数据已经成功上传~来自长安",uploadteam.getIpHome());
+    // RequestBody 只能用于json的数据的接受  包括表单数据
+    @PostMapping("/upload") //post请求 Uploadteam uploadteam)
+    public R upload(
+        @RequestParam("file") MultipartFile data,
+        @RequestParam("chunkIndex") int chunkIndex,
+        @RequestParam("fileName") String fileName
+    ) {  //接收前端传来的数据
+        IpUtil ipadder = new IpUtil();
+        System.out.println("接收到的数据: " +fileName);
+        GobalLog.info("数据已经成功上传~来自长安:",ipadder.toString());
         uploadserverimpl uploadserverimpl = new uploadserverimpl(); //实例化
-        uploadserverimpl.Saveimg(uploadteam); //调用保存图片的方法
+        uploadserverimpl.Saveimg(data); //调用保存图片的方法
 
-        return R.ok().put(("上传成功，存储路径为："),200);
+        return R.ok().put("上传成功，存储路径为：", 200);
     }
+    
+    // public Integer request() {
+    //     return new Integer();
+    // }
 
 }

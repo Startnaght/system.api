@@ -47,6 +47,29 @@
                 "console": "integrated"
             },
             "temporary": true
+        },
+        {
+            "name": "tomcat-11.0.5",
+            "request": "launch",
+            "type": "javadbg",
+            "withProfiling": false,
+            "tomcat": {
+                "name": "tomcat-11.0.5",
+                "debugPort": 8010,
+                "instanceDir": "C:\\Users\\50756\\.smartassist\\appservers\\db93d9bf-0d62-4722-b31b-2f3583bcc201",
+                "deployments": [
+                    {
+                        "contextRoot": "/api",
+                        "urlPath": "/api/",
+                        "name": "imgapi",
+                        "sourcePath": "f:\\changan\\system\\src\\main\\java\\com\\star\\imgapi",
+                        "type": "EXTERNAL_DIR"
+                    }
+                ],
+                "id": "db93d9bf-0d62-4722-b31b-2f3583bcc201",
+                "installationDir": "f:\\apache-tomcat-11.0.5\\apache-tomcat-11.0.5"
+            },
+            "skipBuild": true
         }
     ],
     "compounds": []
