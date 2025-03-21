@@ -1,5 +1,6 @@
 package com.star.imgapi.util;
 
+import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -80,4 +81,6 @@ public class R extends HashMap<String, Object> {
         super.put(key, value);
         return this;
     }
+
+    // public R json()
 }

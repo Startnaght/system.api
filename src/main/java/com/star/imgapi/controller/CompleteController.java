@@ -50,19 +50,19 @@ public class CompleteController {
         IpUtil ipadder = new IpUtil();
         String suffixName = fileName.substring(fileName.lastIndexOf("."));   // 获取文件后缀
         String prefixName = fileName.substring(0, fileName.lastIndexOf("."));   // 获取文件名称不包含后缀
-        String uuid = UUID.randomUUID().toString().replace("-","");//创建服务器名称
+        String uuid = UUID.randomUUID().toString().replace("-","");//创建服务器文件名称
         uploadserverimpl uploadserveri = new uploadserverimpl();  // 构建具体对象
         System.out.println("masses->接收到数据名称为：" + prefixName);   
         GobalLog.info("数据已经成功上传~来自长安:", ipadder.toString());
         // 图片编码为basee64 文本数据为utf-8
         if (suffixName.equals(".txt")) {   // 如果后缀是文本文件就执行下面
-            uploadserveri.SaveTxt(data, fileName, chunkIndex);
+            uploadserveri.SaveTxt(data,(uuid+suffixName), chunkIndex);
         } else if (suffixName.equals(".jpg") || suffixName.equals(".png")) {
             uploadserveri.SaveImg(data, fileName);
         } else {
             return R.ok().put("message", "上传失败，服务器暂不支持此文件类型上传~");
         }
 
-        return R.ok().put("message", "上传成功，存储路径为：path/to/save/" + fileName);
+        return R.ok().put("message", "上传成功，存储名称为：" + (uuid+"."+suffixName));
     }
 }

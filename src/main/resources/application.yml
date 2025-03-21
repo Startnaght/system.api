@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
   datasource:
     username: chenxi
     password: ChenXi_10
@@ -12,6 +16,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+
+
 
 server:
   port: 8000

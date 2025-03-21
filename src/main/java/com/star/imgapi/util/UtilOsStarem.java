@@ -1,38 +1,64 @@
 package com.star.imgapi.util;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-//实现基本so
+
+import org.springframework.web.multipart.MultipartFile;
+import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
 
 public class UtilOsStarem {
 
-    //创建基本的os数据操作工作类
-    public List<String> os_Save(Object data, String path) { //data为操作数据，path为操作路径
-
-        List< String> result = new ArrayList<>(); //创建返回结果
-        FileWriter fileWriter = null; //创建文件写入对象
+    // 合并数据
+    public BufferedReader readChunks(MultipartFile data, String path) {
+        BufferedReader reader = null;
+        System.out.println("开始合并分片数据");
         try {
-            fileWriter = new FileWriter(path); //创建文件写入对象
-            fileWriter.write(data.toString()); //写入数据
-            fileWriter.flush(); //刷新
-            fileWriter.close(); //关闭
-            result.add(ResultCode.success); //返回操作是否成功   
-    }catch (Exception e) {
-            e.printStackTrace(); //打印错误
-            result.add(ResultCode.error);
-            result.add(e.getMessage()); //返回操作是否成功
+            reader = new BufferedReader(new InputStreamReader(data.getInputStream(),"utf-8"));
+        } catch (Exception e) {
+            GobalLog.error(e.getMessage());
         }
-     finally {
-            if (fileWriter != null) {
+        return reader;
+    }
+
+    public List<String> os_Save(BufferedReader data, String path) {
+        BufferedWriter isCloneStuot = null;
+        System.out.println("path:" + path);
+        // File pathDir = new File(path);
+        // if (!pathDir.exists()) {
+        //     pathDir.mkdirs();
+        // }
+
+        List<String> result = new ArrayList<>();
+        try (BufferedWriter buffWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path),"Utf-8") )) {
+            char[] buffer = new char[1024];
+            int bytesRead;
+            while ((bytesRead = data.read(buffer)) != -1) {
+                buffWriter.write(buffer, 0, bytesRead);
+            }
+            buffWriter.close();
+            isCloneStuot = buffWriter;
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.add("error");
+            result.add(e.getMessage());
+        } finally {
+            if (isCloneStuot != null) {
                 try {
-                    fileWriter.close();
+                    isCloneStuot.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    GobalLog.debug(e.getMessage()); //打印错误
+                    result.add(e.getMessage());
+                    GobalLog.debug(e.getMessage());
                 }
             }
         }
-        return result; // Add return statement
+        return result;
     }
 }
