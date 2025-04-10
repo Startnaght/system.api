@@ -1,6 +1,7 @@
 package com.star.imgapi.entity;
 
 // 上传所需要的参数 由前端传入
+//没有使用的参数
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;

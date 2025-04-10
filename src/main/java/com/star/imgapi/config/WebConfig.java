@@ -1,4 +1,4 @@
-package com.star.imgapi.util;
+package com.star.imgapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

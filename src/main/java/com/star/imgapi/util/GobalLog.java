@@ -5,6 +5,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import java.util.ArrayList;
 //全局日志管理
 
 public class GobalLog {
@@ -24,8 +25,7 @@ public class GobalLog {
         }
     }
 
-    public static void info(String message,String ipHome) {
-        message=message+"ip地址为："+ipHome;  //添加ip地址
+    public static void info(String message) {
         logger.log(Level.INFO, message);
     }
 
