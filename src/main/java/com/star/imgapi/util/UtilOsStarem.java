@@ -2,17 +2,17 @@ package com.star.imgapi.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;
 
+@Component
 public class UtilOsStarem {
 
     // 合并数据
@@ -22,7 +22,7 @@ public class UtilOsStarem {
         try {
             reader = new BufferedReader(new InputStreamReader(data.getInputStream(),"utf-8"));
         } catch (Exception e) {
-            GobalLog.error(e.getMessage());
+            GlobalLog.error(e.getMessage());
         }
         return reader;
     }
@@ -55,7 +55,7 @@ public class UtilOsStarem {
                 } catch (IOException e) {
                     e.printStackTrace();
                     result.add(e.getMessage());
-                    GobalLog.debug(e.getMessage());
+                    GlobalLog.debug(e.getMessage());
                 }
             }
         }

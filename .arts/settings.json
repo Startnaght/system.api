@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         "**/*.iml": true,
-        "**/resupportSource": true
+        "**/resupportSource": true,
+        "**/src/main/java/com/star/imgapi/entity/Uploadteam.java": true
     }
 }
