@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import com.star.imgapi.config.WebClientConfig;
+import com.star.imgapi.config.webClientConfig;
 import com.star.imgapi.entity.Uploadteam;
 import com.star.imgapi.entity.hitokotoCode;
 import com.star.imgapi.service.HitokotoService;
@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CompleteController {
 
     @Autowired
-    private WebClientConfig webClientConfig;
+    private webClientConfig webClientConfig;
 
     @Autowired
     private HttpServletRequest request;

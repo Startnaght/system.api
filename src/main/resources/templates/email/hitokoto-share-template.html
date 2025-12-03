@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>一言分享</title>
+    <style>
+        body { font-family: 'Microsoft YaHei', sans-serif; line-height: 1.8; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .quote-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 50px 30px; text-align: center; border-radius: 10px; }
+        .quote-text { font-size: 24px; font-style: italic; margin-bottom: 20px; }
+        .quote-author { font-size: 16px; opacity: 0.9; }
+        .info-section { background: #f8f9fa; padding: 30px; margin-top: 20px; border-radius: 10px; }
+        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="quote-section">
+        <div class="quote-text" th:text="'「' + ${hitokoto} + '」'"></div>
+        <div class="quote-author" th:text="'—— ' + ${fromWho} + '《' + ${from} + '》'"></div>
+    </div>
+
+    <div class="info-section">
+        <p>📧 这封一言分享邮件由 <strong th:text="${senderName}"></strong> 通过 <strong th:text="${serviceName}"></strong> 发送</p>
+        <p>⏰ 分享时间：<span th:text="${shareTime}"></span></p>
+        <p>🏷️ 分类：<span th:text="${type}"></span></p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <p>喜欢这句话吗？也来分享你的一言吧！</p>
+            <a href="https://your-domain.com" style="display: inline-block; padding: 10px 20px;
+                   background: #667eea; color: white; text-decoration: none; border-radius: 5px;">
+                🌟 发现更多一言
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>💫 一言（Hitokoto）是一款致力于分享短句的网站</p>
+        <p>&copy; 2024 Star Image API · 让美好的句子温暖每一天</p>
+    </div>
+</div>
+</body>
+</html>

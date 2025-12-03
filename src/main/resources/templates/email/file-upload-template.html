@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传成功通知</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+        .file-info { background: white; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
+        .button { display: inline-block; padding: 12px 30px; background: #667eea;
+            color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📁 文件上传成功</h1>
+        <p>您的文件已成功上传到 Star Image API 服务</p>
+    </div>
+
+    <div class="content">
+        <p>尊敬的 <strong th:text="${userName ?: '用户'}"></strong>，您好！</p>
+        <p>我们很高兴地通知您，您的文件已成功上传到我们的服务器。</p>
+
+        <div class="file-info">
+            <h3>📋 文件信息</h3>
+            <table>
+                <tr>
+                    <td><strong>文件名：</strong></td>
+                    <td th:text="${fileName}"></td>
+                </tr>
+                <tr>
+                    <td><strong>文件类型：</strong></td>
+                    <td th:text="${fileType}"></td>
+                </tr>
+                <tr>
+                    <td><strong>文件大小：</strong></td>
+                    <td th:text="${fileSize}"></td>
+                </tr>
+                <tr>
+                    <td><strong>上传时间：</strong></td>
+                    <td th:text="${uploadTime}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <p>💡 <strong>下一步操作建议：</strong></p>
+        <ul>
+            <li>您可以通过API接口访问和管理上传的文件</li>
+            <li>如需分享文件，请生成安全的分享链接</li>
+            <li>文件将根据您的存储计划保留相应时间</li>
+        </ul>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://your-domain.com/dashboard" class="button">📊 查看文件管理</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>此邮件由 <strong th:text="${serviceName}"></strong> 系统自动发送，请勿直接回复。</p>
+        <p>如有问题，请联系技术支持：support@yourdomain.com</p>
+        <p>&copy; 2024 Star Image API. 保留所有权利。</p>
+    </div>
+</div>
+</body>
+</html>

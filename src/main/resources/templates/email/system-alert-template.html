@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>系统异常警报</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .alert-content { background: #fff3cd; padding: 30px; border-left: 4px solid #ffc107; }
+        .error-details { background: #f8d7da; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚠️ 系统异常警报</h1>
+        <p><strong th:text="${serviceName}"></strong> 检测到系统异常</p>
+    </div>
+
+    <div class="alert-content">
+        <p><strong>警报级别：</strong> <span style="color: #dc3545;">严重</span></p>
+        <p><strong>异常时间：</strong> <span th:text="${timestamp}"></span></p>
+
+        <div class="error-details">
+            <h3>🔍 异常详情</h3>
+            <p><strong>异常类型：</strong> <span th:text="${errorType}"></span></p>
+            <p><strong>错误信息：</strong> <code th:text="${errorMessage}"></code></p>
+        </div>
+
+        <p>🚨 <strong>建议操作：</strong></p>
+        <ul>
+            <li>立即检查服务器状态和日志</li>
+            <li>验证相关服务是否正常运行</li>
+            <li>检查数据库连接和资源使用情况</li>
+            <li>如有必要，执行系统恢复程序</li>
+        </ul>
+
+        <p>📋 <strong>处理状态：</strong> <span style="color: #dc3545;">待处理</span></p>
+    </div>
+
+    <div class="footer">
+        <p>此警报由 <strong th:text="${serviceName}"></strong> 监控系统自动生成</p>
+        <p>请及时处理以确保系统稳定运行</p>
+    </div>
+</div>
+</body>
+</html>
